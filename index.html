@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Converter</title>
+    <link
+      id="dynamic-favicon"
+      rel="icon"
+      type="image/x-icon"
+      href="./icons/icon.ico"
+    />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Image Converter</h1>
+      <p>
+        Upload your image, choose the format, and convert it. You can download
+        the converted image after conversion.
+      </p>
+      <input class="btn" type="file" id="fileInput" accept="image/*" />
+      <select id="formatSelect">
+        <option value="image/png">PNG</option>
+        <option value="image/jpeg">JPEG</option>
+        <option value="image/webp">WEBP</option>
+        <option value="image/gif">GIF</option>
+        <option value="image/bmp">BMP</option>
+        <option value="image/tiff">TIFF</option>
+        <option value="image/x-icon">ICO</option>
+        <option value="image/svg+xml">SVG</option>
+        <option value="image/x-tga">TGA</option>
+        <option value="image/x-dng">RAW</option>
+      </select>
+      <button id="convertImage">Convert Image</button>
+      <div id="convertedImageContainer" style="display: none">
+        <a id="downloadLink" href="" download="converted-image"
+          >Download Converted Image</a
+        >
+        <p id="convertedFileSizeDisplay">Converted file size: N/A</p>
+      </div>
+      <div id="successMessage" style="display: none">
+        <p>Your image has been successfully converted!</p>
+      </div>
+    </div>
+    <canvas id="canvas" style="display: none"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
